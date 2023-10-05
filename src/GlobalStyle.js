@@ -38,7 +38,6 @@ body::-webkit-scrollbar-thumb {
     border-radius: 9px;
     background-clip: content-box;
 }
-
 h1,
 h2,
 h3,

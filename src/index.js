@@ -3,10 +3,25 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { AppProvider } from "./context/contextProvider";
+import { FilterContextProvider } from "./context/filter_context";
+import { CartProvider } from "./context/cartContext";
+import { UserContextProvider } from "./context/userContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<App />);
+root.render(
+
+    <AppProvider>
+        <FilterContextProvider>
+            <CartProvider>
+                <UserContextProvider>
+                    <App />
+                </UserContextProvider>
+            </CartProvider>
+        </FilterContextProvider>
+    </AppProvider>
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
